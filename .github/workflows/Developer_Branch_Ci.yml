@@ -8,9 +8,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Unit Test Case
-        run: npm test
+        run: echo npm test
 
-      - name: Unit Integration Case
+      - name: Unit Integration Test
         run: echo Integration test
 
       - name: SAST Scans

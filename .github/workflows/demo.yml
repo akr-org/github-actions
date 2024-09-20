@@ -1,24 +1,8 @@
 name: Pull_Request_CI
 on:
-  pull_request:
+  push:
     branches:
-      - 'XPNS-*'
+      - 'main'
 jobs:
   CI_Steps:
-    runs-on: self-hosted
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: Unit Test Case
-        run: echo Unit Test
-
-
-      - name: Unit Integration Case
-        run: echo Integration test
-
-      - name: SAST Scans
-        run: echo SAST Scans
-
-      - name: Produce Artifacts
-        run: echo Produce artifacts
+    uses: akr-org/github-actions/.github/workflows/sample.yml@main

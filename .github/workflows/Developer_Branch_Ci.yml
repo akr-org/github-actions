@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Unit Test Case
-        run: echo Unit Test
+        run: npm test
 
       - name: Unit Integration Case
         run: echo Integration test

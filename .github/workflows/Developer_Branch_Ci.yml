@@ -20,6 +20,7 @@ jobs:
         env:
           SONAR_USER: ${{ secrets.SONAR_USER }}
           SONAR_PASS: ${{ secrets.SONAR_PASS }}
+          SERVICE
 
 
 

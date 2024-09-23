@@ -14,7 +14,7 @@ jobs:
         run: echo Integration test
 
       - name: Code Quality
-        run: sonar-scanner -Dsonar.host.url=http://172.31.23.70:9000 -Dsonar.login="$SONAR_USER" -Dsonar.password="$SONAR_PASS" -Dsonar.projectkey=expense-backend
+        run: sonar-scanner -Dsonar.host.url=http://172.31.23.70:9000 -Dsonar.login="${SONAR_USER}" -Dsonar.password="${SONAR_PASS}" -Dsonar.projectkey=expense-backend
         env:
           SONAR_USER: ${{ secrets.SONAR_USER }}
           SONAR_PASS: ${{ secrets.SONAR_PASS }}

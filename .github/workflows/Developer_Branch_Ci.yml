@@ -1,21 +1,22 @@
 name: Developer_Branch_CI
 on: [workflow_call]
+
 jobs:
-  check-bats-version:
+  CI_Steps:
     runs-on: self-hosted
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Unit Test Case
+      - name: Unit Tests
         run: echo npm test
 
-      - name: Integration Test
-        run: echo Integration test
+      - name: Integration Tests
+        run: echo Integration Tests
 
-      - name: Code Quality
+      - name: Code Quality & Quality Gate
         shell: bash
-        run: sonar-scanner -Dsonar.host.url=http://172.31.23.70:9000 -Dsonar.login="${SONAR_USER}" -Dsonar.password="${SONAR_PASS}" -Dsonar.projectkey=expense-backend -X
+        run: sonar-scanner -Dsonar.host.url=http://172.31.23.70:9000 -Dsonar.login="${SONAR_USER}" -Dsonar.password="${SONAR_PASS}" -Dsonar.projectKey=expense-backend -Dsonar.qualitygate.wait=true
         env:
           SONAR_USER: ${{ secrets.SONAR_USER }}
           SONAR_PASS: ${{ secrets.SONAR_PASS }}

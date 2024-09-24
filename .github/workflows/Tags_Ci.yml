@@ -19,7 +19,8 @@ jobs:
         run: echo SCA Scans
 
       - name: Detect Secrets in Source Code
-        run: echo Detect Secrets
+        run: echo ## trufflehog filesystem .
 
       - name: Produce Artifacts
-        run: echo Produce artifacts
+        run: |
+          env
